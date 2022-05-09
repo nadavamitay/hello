@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "aksan-e4d9"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "aksan-e4d9"
+  template:
+    metadata:
+      labels:
+        app: "aksan-e4d9"
+    spec:
+      containers:
+        - name: "aksan-e4d9"
+          image: "arcdemo321.azurecr.io/aksan"
+          ports:
+          - containerPort: 80
